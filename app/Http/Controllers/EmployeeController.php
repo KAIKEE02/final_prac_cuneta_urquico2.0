@@ -35,7 +35,8 @@ class EmployeeController extends Controller
                 'lname' => 'required',
                 'mname' => 'required',
                 'age' => 'required|integer',
-                'dobirth' => 'required|date',
+                'address' => 'required',
+                'zip' => 'required',
             ]);
 
             Employee::create($request->all());
@@ -71,7 +72,8 @@ class EmployeeController extends Controller
                 'lname' => 'required',
                 'mname' => 'required',
                 'age' => 'required|integer',
-                'dobirth' => 'required|date',
+                'address' => 'required',
+                'zip' => 'required ',
             ]);
 
             $employee = Employee::find($id);
@@ -85,7 +87,7 @@ class EmployeeController extends Controller
         */
         public function destroy(string $id)
         {
-            $employee = Employee::find($id);
+            $employee   = Employee::find($id);
             $employee->delete();
             return redirect()->route('employee.index')
                 ->with('success', 'Employee deleted successfully.');

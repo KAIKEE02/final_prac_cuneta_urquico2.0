@@ -49,10 +49,10 @@
                         <div class="form-group col-12">
                            <label for="exampleInputFile">Middle Name</label>
                    
-                          <input type="text" class="form-control" id="midname" name="midname" placeholder="Enter your Middle Name"
-                          value="{{ $employees->midname}}">
+                          <input type="text" class="form-control" id="mname" name="mname" placeholder="Enter your Middle Name"
+                          value="{{ $employees->mname}}">
                         </div>
-                          @error('midname') <span class="text-danger">{{$message}}</span> @enderror
+                          @error('mname') <span class="text-danger">{{$message}}</span> @enderror
 
 
                         <div class="form-group col-12">

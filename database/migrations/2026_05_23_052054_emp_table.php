@@ -16,8 +16,10 @@ return new class extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->string('mname');
+            $table->string('address');
+            $table->string('zip');
             $table->integer('age');
-            $table->date('dobirth');
+           
             $table->timestamps();
         });
         //

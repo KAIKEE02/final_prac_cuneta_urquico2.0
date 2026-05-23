@@ -35,7 +35,7 @@
                             <label
                                for="exampleInputEmail1">First Name
                             </label>
-                               <input type="text" class="form-control g-2" id="fname" name="fname" placeholder="Enter your Firstname" require>
+                               <input type="text" class="form-control g-2" id="fname" name="fname" placeholder="Enter your Firstname" required>
                          </div>
                           @error('fname') <span class="text-danger">{{$message}}</span> @enderror
                   
@@ -48,9 +48,9 @@
                         <div class="form-group col-12">
                            <label for="exampleInputFile">Middle Name</label>
                    
-                          <input type="text" class="form-control" id="midname" name="midname" placeholder="Enter your Middle Name">
+                          <input type="text" class="form-control" id="mname" name="mname" placeholder="Enter your Middle Name">
                         </div>
-                          @error('midname') <span class="text-danger">{{$message}}</span> @enderror
+                          @error('mname') <span class="text-danger">{{$message}}</span> @enderror
 
 
                         <div class="form-group col-12">
@@ -63,7 +63,7 @@
 
                         <div class="form-group col-6">
                           <label for="exampleInputPassword1">Zip</label>
-                          <input type="number" class="form-control" id="zip" name="zip" placeholder="">
+                          <input type="text" class="form-control" id="zip" name="zip" placeholder="">
                         </div>
                         @error('zip') <span class="text-danger">{{$message}}</span> @enderror
 

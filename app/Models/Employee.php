@@ -15,6 +15,7 @@ class Employee extends Model
         'lname',
         'mname',
         'age',
-        'dobirth',
+        'address',
+        'zip'
     ];
 }
