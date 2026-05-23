@@ -48,7 +48,8 @@ class EmployeeController extends Controller
         */
         public function show(string $id)
         {
-            //
+            $employee = Employee::find($id);
+            return view('employee.show', compact('employee'));
         }
     
         /**
@@ -56,7 +57,8 @@ class EmployeeController extends Controller
         */
         public function edit(string $id)
         {
-            
+            $employee = Employee::find($id);
+            return view('employee.edit', compact('employee'));
         }
     
         /**
@@ -64,7 +66,18 @@ class EmployeeController extends Controller
         */
         public function update(Request $request, string $id)
         {
-            //
+            $request->validate([
+                'fname' => 'required',
+                'lname' => 'required',
+                'mname' => 'required',
+                'age' => 'required|integer',
+                'dobirth' => 'required|date',
+            ]);
+
+            $employee = Employee::find($id);
+            $employee->update($request->all());
+            return redirect()->route('employee.index')
+                ->with('success', 'Employee updated successfully.');
         }
     
         /**
@@ -72,6 +85,9 @@ class EmployeeController extends Controller
         */
         public function destroy(string $id)
         {
-            //
+            $employee = Employee::find($id);
+            $employee->delete();
+            return redirect()->route('employee.index')
+                ->with('success', 'Employee deleted successfully.');
         }
 }

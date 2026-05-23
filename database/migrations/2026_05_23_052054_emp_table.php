@@ -11,6 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('3a_tbl', function (Blueprint $table) {
+            $table->id();
+            $table->string('fname');
+            $table->string('lname');
+            $table->string('mname');
+            $table->integer('age');
+            $table->date('dobirth');
+            $table->timestamps();
+        });
         //
     }
 
@@ -19,6 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('3a_tbl');
+            
     }
 };
